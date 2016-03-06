@@ -33,11 +33,11 @@ module.exports = function(grunt){
 
         concat: {
             dist: {
-                src: ['src/wrap_header.js', 'src/base64.js', 'src/sha1.js', 'src/md5.js', 'src/polyfills.js', 'src/core.js', 'src/bosh.js', 'src/websocket.js', 'src/wrapper.js', 'src/wrap_footer.js'],
+                src: ['src/wrap_header.js', 'src/base64.js', 'src/sha1.js', 'src/md5.js', 'src/utils.js', 'src/polyfills.js', 'src/core.js', 'src/bosh.js', 'src/websocket.js', 'src/wrapper.js', 'src/wrap_footer.js'],
                 dest: '<%= pkg.name %>'
             },
             light: {
-                src: ['src/wrap_header.js', 'src/sha1.js', 'src/md5.js', 'src/core.js', 'src/bosh.js', 'src/websocket.js', 'src/wrap_footer.js'],
+                src: ['src/wrap_header.js', 'src/sha1.js', 'src/md5.js', 'src/utils.js', 'src/core.js', 'src/bosh.js', 'src/websocket.js', 'src/wrapper.js', 'src/wrap_footer.js'],
                 dest: 'strophe.light.js',
                 options: {
                     process: function(src){

@@ -1,6 +1,7 @@
 SHELL		?= /usr/env/bin/bash
 BOWER		?= node_modules/.bin/bower
 GRUNT		?= ./node_modules/.bin/grunt
+HTTPSERVE	?= ./node_modules/.bin/http-server
 PHANTOMJS	?= ./node_modules/.bin/phantomjs
 SRC_DIR = src
 DOC_DIR = doc
@@ -32,11 +33,17 @@ $(STROPHE_LIGHT)::
 	$(GRUNT) concat:light
 	@@echo
 
+$(STROPHE_LIGHT)::
+	@@echo "Building" $(STROPHE_LIGHT) "..."
+	$(GRUNT) concat:light
+	@@echo
+
 $(STROPHE_MIN)::
 	make $(STROPHE)
 	@@echo "Building" $(STROPHE_MIN) "..."
 	$(GRUNT) min
 
+.PHONY: doc
 doc:
 	@@echo "Building Strophe documentation..."
 	@@if [ ! -d $(NDPROJ_DIR) ]; then mkdir $(NDPROJ_DIR); fi
@@ -47,15 +54,22 @@ doc:
 	@@echo "Documentation built."
 	@@echo
 
+.PHONY: release
 release:
 	@@$(GRUNT) release
 	@@echo "Release created."
 	@@echo
 
+.PHONY: check
 check::
 	make stamp-bower
 	$(PHANTOMJS) node_modules/qunit-phantomjs-runner/runner-list.js tests/strophe.html
 
+.PHONY: serve
+serve:
+	$(HTTPSERVE) -p 8080
+
+.PHONY: clean
 clean:
 	@@rm -f stamp-npm stamp-bower
 	@@rm -rf node_modules bower_components
@@ -66,5 +80,3 @@ clean:
 	@@rm -rf $(NDPROJ_DIR) $(DOC_DIR) $(DOC_TEMP)
 	@@echo "Done."
 	@@echo
-
-.PHONY: all doc release clean check $(STROPHE) $(STROPHE_MIN) $(STROPHE_LIGHT)
