@@ -1,7 +1,7 @@
 {
   "name": "strophe.js",
   "description": "Strophe.js is an XMPP library for JavaScript",
-  "version": "1.2.5",
+  "version": "1.2.8",
   "homepage": "http://strophe.im/strophejs",
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "strophe.js",
     "CHANGELOG.txt",
     "LICENSE.txt",
-    "README.txt"
+    "README.txt",
+    "src/"
   ],
   "author": "Jack Moffit (metajack)",
   "contributors": [
@@ -36,10 +37,6 @@
   "licenses": [
     "MIT"
   ],
-  "dependencies": {
-    "phantomjs": "^1.9.13",
-    "qunit-phantomjs-runner": "^2.1.0"
-  },
   "main": "strophe.js",
   "browser": "strophe.js",
   "scripts": {
@@ -72,6 +69,8 @@
     "grunt-natural-docs": "~0.1.1",
     "grunt-shell": "~0.6.1",
     "http-server": "^0.7.4",
+    "phantomjs": "^1.9.13",
+    "qunit-phantomjs-runner": "^2.1.0",
     "requirejs": "~2.1.15"
   }
 }

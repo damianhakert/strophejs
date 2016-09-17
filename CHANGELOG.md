@@ -1,5 +1,22 @@
 # Strophe.js Change Log
 
+## Version 1.2.8 - 2016-09-16
+* #200 Fix for webpack
+* #203 Allow custom Content-Type header for requests
+* #206 XML stanza attributes: there is no 'quot' escape inside 'serialize' method
+* The files in `./src` are now also included in the NPM distribution.
+* Add support for SASL-EXTERNAL
+
+## Version 1.2.7 - 2016-06-17
+* #193 Move phantomjs dependencies to devDependencies
+
+## Version 1.2.6 - 2016-06-06
+* #178 Added new value (CONNTIMEOUT) to Strophe.Status
+* #180 bosh: check sessionStorage support before using it
+* #182 Adding SASL OAuth Bearer authentication
+* #190 Fix .c() to accept both text and numbers as text for the child element
+* #192 User requirejs instead of require for node compat
+
 ## Version 1.2.5 - 2016-02-09
 * Add a new Strophe.Connection option to add cookies
 * Add new Strophe.Connection option "withCredentials"
