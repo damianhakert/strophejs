@@ -33,11 +33,6 @@ $(STROPHE_LIGHT)::
 	$(GRUNT) concat:light
 	@@echo
 
-$(STROPHE_LIGHT)::
-	@@echo "Building" $(STROPHE_LIGHT) "..."
-	$(GRUNT) concat:light
-	@@echo
-
 $(STROPHE_MIN)::
 	make $(STROPHE)
 	@@echo "Building" $(STROPHE_MIN) "..."
